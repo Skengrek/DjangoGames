@@ -13,6 +13,7 @@ services:
       - .:/app:z
       - ./collected_static:/app/djangogames/collected_static
     env_file:
+      - ./.envs/.django
       - ./.envs/.postgres
     ports:
       - "1234:1234"
