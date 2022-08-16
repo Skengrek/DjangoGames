@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: djangogames
+    container_name: djangogames
+    environment:
+      POSTGRES_HOST: "host.docker.internal"
+    volumes:
+      - .:/app:z
+      - ./collected_static:/app/djangogames/collected_static
+    env_file:
+      - ./.envs/.postgres
+    ports:
+      - "1234:1234"
+    command: /start
