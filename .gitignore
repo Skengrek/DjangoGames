@@ -132,3 +132,5 @@ dmypy.json
 # environments files
 .postgres
 .django
+
+.vscode
