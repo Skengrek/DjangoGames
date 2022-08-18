@@ -77,6 +77,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "DjangoGames.wsgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis", 6379)],
+        },
+    },
+}
 
 
 # Database
