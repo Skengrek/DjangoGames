@@ -8,6 +8,17 @@
     <title>{% block title%}{% endblock title%}</title>
 </head>
 
+<style>
+    label,
+    input {
+        display: block;
+    }
+
+    span.helptext {
+        display: none;
+    }
+</style>
+
 <body>
     {% block content%}{% endblock content%}
 </body>

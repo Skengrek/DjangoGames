@@ -19,7 +19,6 @@ services:
       - "1234:1234"
     command: /start
     depends_on:
-      - db
       - redis
 
   redis:
