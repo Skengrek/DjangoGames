@@ -1,0 +1,132 @@
+.indicator-container,
+.indicator-container-highlighted {
+    border-radius: 0.375rem;
+    box-shadow: 0 0 5px 0 rgba(136, 152, 170, 0.15);
+    padding: 0.5em !important;
+    margin: 0.5rem 0 !important;
+}
+
+.indicator-container-highlighted {
+    padding: 0.5em 2rem !important;
+}
+
+.indicator-container h3,
+.indicator-container-highlighted h3 {
+    font-size: 13px;
+    text-align: center;
+    color: #666;
+}
+
+.indicator-container h2,
+.indicator-container-highlighted h2 {
+    text-align: center;
+    color: #666;
+}
+
+*[data-dash-is-loading="true"] {
+    visibility: hidden;
+    max-height: 40px !important;
+    overflow: hidden;
+}
+
+button.export {
+    display: none;
+}
+
+.dash-table-container .dash-spreadsheet-container table {
+    font-size: 12px !important;
+}
+
+/* make button for markdown */
+.dash-cell-value.cell-markdown {
+    margin: 0;
+    overflow: visible;
+    text-transform: none;
+    display: inline-block;
+    font-weight: 400;
+    padding: 0.25rem 0.5rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    text-align: center !important;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    font-family: inherit;
+}
+
+.dash-cell-value.cell-markdown p {
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+.dash-cell-value.cell-markdown p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: .875rem;
+}
+
+.card.widget .card-header .card-title {
+    margin-bottom: 0;
+}
+
+.card.widget .card-header {
+    padding: 1rem 1.25rem 0.5rem;
+}
+
+.breadcrumb {
+    font-size: 14px;
+}
+
+.compliant-rule {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.incompliant-rule {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.bg-details {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner table {
+    font-family: Roboto, sans-serif !important;
+}
+
+.popover {
+    max-width: 600px;
+}
+
+.popover-body {
+    height: 350px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 8px !important;
+}
+
+
+.table.table-condensed>thead>tr>th,
+.table.table-condensed>tbody>tr>th,
+.table.table-condensed>tfoot>tr>th,
+.table.table-condensed>thead>tr>td,
+.table.table-condensed>tbody>tr>td,
+.table.table-condensed>tfoot>tr>td {
+    padding: 6px 4px;
+}
+
+.bilans-list .table.table-condensed th {
+    width: 200px;
+    text-align: right;
+}
+
+.bilans-list .popover-content {
+    padding: 0;
+}

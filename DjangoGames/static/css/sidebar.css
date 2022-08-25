@@ -1,0 +1,12 @@
+@media (max-width: 767.98px) {
+    div#main-container {
+      margin-left: 0px !important;
+    }
+    #sidenav-main {
+      width:100% !important;
+      overflow-x:unset !important;
+    }
+    .nav-link-text {
+      display :block !important;
+    }
+  }

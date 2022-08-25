@@ -1,0 +1,9 @@
+{% extends "base_error.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Forbidden (403)" %}{% endblock %}
+
+{% block card-title %}{% translate "Forbidden (403)" %}{% endblock card-title %}
+{% block card-body %}
+<p>{% translate "You don't have permission to open this page." %}</p>
+{% endblock card-body %}

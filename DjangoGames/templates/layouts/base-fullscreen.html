@@ -1,0 +1,61 @@
+<!DOCTYPE html>{% load static %}
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    {% block title %}{% endblock title %}
+  </title>
+
+  <link rel="icon" href="">
+  <link rel="icon" href="" sizes="32x32" />
+  <link rel="icon" href="" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="" />
+  <meta name="msapplication-TileImage" content="" />
+
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'assets/css/argon-dashboard.css' %}?v=1.1.0" type="text/css">
+
+  {# You can change branding to omd instead of default for example #}
+  <link rel="stylesheet" href="" type="text/css">
+  <link rel="stylesheet" href="{% static 'common.css' %}" type="text/css">
+
+  {% endblock css %}
+
+  {# Specific CSS goes HERE #}
+  {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+
+<body class="bg-default">
+
+  <div class="main-content">
+
+    {% include "includes/navigation-fullscreen.html" %}
+
+    {# Header #}
+    <div class="container pt-8">
+      <div class="text-center my-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6">
+            <h1 class="text-white">{% block page-title %}{% endblock page-title %}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block content %}{% endblock content %}
+
+    {% include "includes/footer-fullscreen.html" %}
+
+  </div>
+
+  <script src="{% static 'assets/js/argon-dashboard.min.js' %}?v=1.1.0"></script>
+
+</body>
+
+</html>

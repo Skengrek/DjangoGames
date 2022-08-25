@@ -1,0 +1,17 @@
+{% extends "base_error.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "500 Internal Server Error" %}{% endblock %}
+
+{% block card-title %}
+{% translate "Oops!!! An error Occurred" %}
+{% endblock card-title %}
+
+{% block card-body %}
+<h3>{% translate "Looks like something went wrong!" %}</h3>
+
+<p>
+    {% translate "We track these errors automatically, but if the problem persists feel free to contact us." %}
+    {% translate "In the meantime, try refreshing." %}
+</p>
+{% endblock card-body %}

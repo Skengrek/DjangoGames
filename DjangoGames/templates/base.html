@@ -1,39 +1,91 @@
+{% load static i18n %}
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block pagename%}{% endblock pagename%}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="">
+    <link rel="icon" href="" sizes="32x32" />
+    <link rel="icon" href="" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="" />
+    <meta name="msapplication-TileImage" content="" />
+
+    {# Specific header (ex. plotly) goes HERE #}
+    {% block extra_header %}{% endblock extra_header %}
+
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+    {% block css %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/js/plugins/nucleo/css/nucleo.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css' %}"
+        type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/css/argon-dashboard.css' %}?v=1.1.0" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}" type="text/css">
+
+    {# You can change branding to omd instead of default for example #}
+    <link rel="stylesheet" href="{% agency_static 'brand.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'common.css' %}" type="text/css">
+
+    {% endblock %}
+
+    {# Specific CSS goes HERE #}
+    {% block stylesheets %}{% endblock stylesheets %}
 </head>
 
 <body>
-    <div style="width:100%">
+    {% include "includes/sidebar.html" %}
 
-        <div style="background-color:#b5dcb3; width:100%">
-            <h1>{% block title%}{% endblock title%}</h1>
+    <div class="main-content" id="main-container">
+
+        {% include "includes/navigation.html" %}
+
+        {% block page_header_content %}
+        <div class="header bg-default py-4">
+            <div class="container-fluid ">
+                <h1 class="text-white text-center">{% block page-title %}{% endblock page-title %}</h1>
+            </div>
         </div>
+        {% endblock page_header_content %}
 
-        <div style="background-color:#aaa; height:200px; width:100px; float:left;">
-            <div><b>Main Menu</b></div>
-            HTML<br />
-            PHP<br />
-            PERL...
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show"
+            role="alert">
+            <span class="alert-inner--text">{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+        {% endfor %}
 
-        <div style="background-color:#eee; height:200px; width:350px; float:left;">
-            <p>{% block content%}{% endblock content%}</p>
-        </div>
-
-
-        <div style="background-color:#b5dcb3; clear:both">
-            <center>
-                Copyright © 2007 Tutorialspoint.com
-            </center>
-        </div>
+        {% block content %}{% endblock %}
 
     </div>
+
+    {% block modal %}{% endblock modal %}
+
+    <script src="{% static 'assets/js/argon-dashboard.min.js' %}?v=1.1.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="{% static 'assets/js/predefined-daterange-picker.js' %}"></script>
+    <script src="{% static 'assets/js/sidebar.js' %}"></script>
+
+    {# Specific footer (ex. plotly) goes HERE #}
+    {% block extra_footer %}{% endblock extra_footer %}
+
+    {# Specific JS goes HERE #}
+    {% block javascripts %}{% endblock javascripts %}
+
 </body>
 
 </html>
