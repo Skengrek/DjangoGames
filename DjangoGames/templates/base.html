@@ -13,8 +13,6 @@
     <link rel="icon" href="" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="" />
     <meta name="msapplication-TileImage" content="" />
-
-    {# Specific header (ex. plotly) goes HERE #}
     {% block extra_header %}{% endblock extra_header %}
 
     {% load bootstrap4 %}
@@ -32,9 +30,6 @@
     <link rel="stylesheet" href="{% static 'assets/css/argon-dashboard.css' %}?v=1.1.0" type="text/css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}" type="text/css">
-
-    {# You can change branding to omd instead of default for example #}
-    <link rel="stylesheet" href="{% agency_static 'brand.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'common.css' %}" type="text/css">
 
     {% endblock %}
@@ -74,6 +69,7 @@
 
     {% block modal %}{% endblock modal %}
 
+    <script src="{% static 'assets/js/pixi.min.js' %}"></script>
     <script src="{% static 'assets/js/argon-dashboard.min.js' %}?v=1.1.0"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>

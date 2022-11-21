@@ -21,7 +21,7 @@ function collapseNav() {
     document.getElementById("sidenav-main").style.overflowX = "hidden";
     document.getElementById("main-container").style.marginLeft = "59px";
 
-    document.getElementById("footer-img").src = url_logo_annalect_mini
+    document.getElementById("footer-img").src = url_logo_mini
 
     for (let element of document.getElementsByClassName("nav-link-text")) {
         element.style.display = "none";
@@ -41,7 +41,7 @@ function openNav() {
     document.getElementById("sidenav-main").style.width = "250px";
     document.getElementById("main-container").style.marginLeft = "250px";
 
-    document.getElementById("footer-img").src = url_logo_annalect
+    document.getElementById("footer-img").src = url_logo
 
     for (let element of document.getElementsByClassName("nav-link-text")) {
         element.style.display = "block";
