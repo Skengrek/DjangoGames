@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% translate "Home" %}{% endblock %}
+
+{% block card-title %}{% translate "Home" %}{% endblock card-title %}
+
+{% block content %}{% endblock %}
+
+
+{% block javascripts %}
+<script type="module">
+    import Application from "{% static 'assets/js/pixi.min.js' %}";
+    import Loader from "{% static 'assets/js/pixi.min.js' %}";
+    const loader = Loader.shared;
+    console.log("Start Test")
+    let type = "WebGL";
+    if (!PIXI.utils.isWebGLSupported()) {
+        type = "canvas";
+    }
+    let app = new PIXI.Application({
+        width: 256,
+        height: 256,
+        resolution: 1,
+        backgroundColor: 0xb00b55,
+    });
+    app.renderer.autoResize = true;
+    app.renderer.resize(512, 512);
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    console.log('renderer dimensions : ' +
+        app.renderer.view.width + ', ' +
+        app.renderer.view.height
+    );
+
+    loader.add("{% static 'img/computer-game.png' %}")
+
+    function setup() {
+        let catSprite = new PIXI.Sprite(
+            PIXI.loader.resources['img/computer-game.png'].texture
+        );
+
+        app.stage.addChild(catSprite);
+    }
+    document.body.appendChild(app.view);
+
+    console.log("End Test")
+</script>
+{% endblock javascripts %}

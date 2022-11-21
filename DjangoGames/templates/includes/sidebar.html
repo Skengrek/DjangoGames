@@ -61,7 +61,7 @@
       {% block nav_items %}{% endblock nav_items %}
     </div>
     <div class="sidenav-footer">
-      <img src="url_logo" id="footer-img" alt="...">
+      <img src="{% static 'img/computer-game.png' %}" id="footer-img" alt="...">
       <span class="text-muted small">{{ settings.PROJECT_VERSION_NUMBER }}</span>
     </div>
   </div>
@@ -69,5 +69,5 @@
 
 <script>
   var url_logo = "{% static 'img/placeHolder.png' %}";
-  var url_logo_mini = "{% static 'img/placeHolder.png' %}";
+  var url_logo_mini = "{% static 'img/computer-game.png' %}";
 </script>

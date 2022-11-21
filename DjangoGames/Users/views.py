@@ -4,6 +4,10 @@ from django.urls import reverse
 from .forms import CustomUserCreationForm
 
 
+def home(request):
+    return render(request, "home.html")
+
+
 def dashboard(request):
     return render(request, "users/dashboard.html")
 
@@ -17,4 +21,3 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect(reverse("dashboard"))
-
